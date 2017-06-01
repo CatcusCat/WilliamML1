@@ -55,7 +55,7 @@ public class PhotoQuiz {
 			JOptionPane.showMessageDialog(null, "Correct!");
 		}
 		
-		else if (q1 == 0) {
+		else if (q1 == 1) {
 			JOptionPane.showMessageDialog(null, "Incorrect!!!");
 		}
 	}
