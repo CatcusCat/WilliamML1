@@ -1,5 +1,6 @@
 
 
+
 import java.io.IOException;
 
 import org.jointheleague.ecolban.rpirobot.IRobotAdapter;
@@ -34,35 +35,37 @@ public class MazeHugRight extends IRobotAdapter {
 
 		int[] lightBumpReadings = getLightBumps();
 
-		System.out.println(lightBumpReadings[3] + " " + lightBumpReadings[4] + " " + lightBumpReadings[5]);
-
-		
-
-		if (lightBumpReadings[3] > 0) {
-			driveDirect(-200, 200);
+		//RIGHT CLOSED TURN: WORKS
+	if (lightBumpReadings[3] > 0 && lightBumpReadings[5] > 0) {
+			driveDirect(-200, 225);
 			sleep(500);
 			driveDirect(0, 0);
-
-		} else if (lightBumpReadings[4] > 0) {
-			driveDirect(-200, 200);
-			sleep(500);
-			driveDirect(0, 0);
-
-		} else if (lightBumpReadings[5] > 500) {
-			driveDirect(-200, 200);
-			sleep(500);
-			driveDirect(0, 0);
-		}
-
-		else if (lightBumpReadings[5] > 450 && lightBumpReadings[3] == 0) {
-			driveDirect(100, 0);
-			sleep(2000);
-			driveDirect(0, 0);
-		}
-		
-		else {
-			driveDirect(100, 95);
+			System.out.println(lightBumpReadings[3] + " "  + lightBumpReadings[5] + " Closed Turn");
 			
+		} 
+	
+	else if (lightBumpReadings[3] > 1800) {
+		driveDirect(-200, -200);
+		sleep(500);
+		driveDirect(0, 0);
+		sleep(100);
+		driveDirect(-200, 200);
+		sleep(500);
+		driveDirect(0, 0);
+		System.out.println(lightBumpReadings[3] + " BACK UP");
+		}
+	
+			//STRAIGHT: WORKS
+					else if (lightBumpReadings[5] > 0) {
+			driveDirect(90, 110);
+			sleep(800);
+			driveDirect(0, 0);
+				System.out.println(lightBumpReadings[5] + " Straight");
+			}
+			// Drive
+		else {
+			driveDirect(165, 90);
+
 		}
 
 		return true;
@@ -82,4 +85,6 @@ public class MazeHugRight extends IRobotAdapter {
 		stop();
 		closeConnection();
 	}
+
+
 }
