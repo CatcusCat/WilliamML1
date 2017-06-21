@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 public class PhotoQuiz {
 
 	public static void main(String[] args) throws Exception {
+		int score = 0;
 		Frame quizWindow = new Frame();
 		quizWindow.setVisible(true);
  
@@ -32,6 +33,7 @@ public class PhotoQuiz {
 		// 7. print "CORRECT" if the user gave the right answer
 		if (q == 0) {
 			JOptionPane.showMessageDialog(null, "Correct!");
+			score += 1;
 		}
 		
 		
@@ -52,13 +54,19 @@ public class PhotoQuiz {
 		int q1 = JOptionPane.showConfirmDialog(null, "Is this a cat");
 		// 14+ check answer, say if correct or incorrect, etc.
 		if (q1 == 0) {
-			JOptionPane.showMessageDialog(null, "Correct!");
+			JOptionPane.showMessageDialog(null, "Correct");
+			score += 1;
 		}
 		
 		else if (q1 == 1) {
 			JOptionPane.showMessageDialog(null, "Incorrect!!!");
 		}
+		
+		JOptionPane.showMessageDialog(null, "You got " + score + " out of 2 questions correct!");
+		
 	}
+	
+
 
 	private static Component createImage(String imageUrl) throws MalformedURLException {
 		URL url = new URL(imageUrl);
