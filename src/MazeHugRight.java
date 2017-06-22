@@ -1,5 +1,6 @@
 
 
+
 import java.io.IOException;
 
 import org.jointheleague.ecolban.rpirobot.IRobotAdapter;
@@ -35,18 +36,11 @@ public class MazeHugRight extends IRobotAdapter {
 
 		int[] lightBumpReadings = getLightBumps();
 
-		if (isBumpRight()) {
+		if (isBumpRight() || isBumpLeft()) {
 			counter = 0;
 			driveDirect(-100, 100);
 			sleep(250);
-			driveDirect(0, 0);
-		}
-		
-		if (isBumpLeft()) {
-			counter = 0;
-			driveDirect(-200, -200);
-			sleep(500);
-			driveDirect(0, 0);
+			//driveDirect(0, 0);
 		}
 
 		// RIGHT CLOSED TURN: WORKS
@@ -54,7 +48,7 @@ public class MazeHugRight extends IRobotAdapter {
 			counter = 0;
 			driveDirect(-200, 225);
 			sleep(750);
-			driveDirect(0, 0);
+			//driveDirect(0, 0);
 
 		}
 
@@ -74,17 +68,17 @@ public class MazeHugRight extends IRobotAdapter {
 			counter = 0;
 			driveDirect(180, 220);
 			sleep(250);
-			driveDirect(0, 0);
+			//driveDirect(0, 0);
 		}
 
 		// Drive
 
 		else if (counter > 5) {
-			driveDirect(300, 90);
+			driveDirect(300, 80);
 		}
 
 		else {
-			driveDirect(400, 300);
+			driveDirect(400, 200);
 			counter++;
 		}
 
