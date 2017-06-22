@@ -1,6 +1,5 @@
 
 
-
 import java.io.IOException;
 
 import org.jointheleague.ecolban.rpirobot.IRobotAdapter;
@@ -9,13 +8,14 @@ import org.jointheleague.ecolban.rpirobot.SimpleIRobot;
 
 public class MazeHugRight extends IRobotAdapter {
 	// Sonar sonar = new Sonar();
+	int counter = 0;
 
 	public MazeHugRight(IRobotInterface iRobot) {
 		super(iRobot);
 	}
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("Try event listner, rev Monday 2030");
+		//System.out.println("Try event listner, rev Monday 2030");
 		IRobotInterface base = new SimpleIRobot();
 		MazeHugRight rob = new MazeHugRight(base);
 		rob.setup();
@@ -35,39 +35,60 @@ public class MazeHugRight extends IRobotAdapter {
 
 		int[] lightBumpReadings = getLightBumps();
 
-		//RIGHT CLOSED TURN: WORKS
-	if (lightBumpReadings[3] > 0 && lightBumpReadings[5] > 0) {
-			driveDirect(-200, 225);
+		if (isBumpRight()) {
+			counter = 0;
+			driveDirect(-100, 100);
+			sleep(250);
+			driveDirect(0, 0);
+		}
+		
+		if (isBumpLeft()) {
+			counter = 0;
+			driveDirect(-200, -200);
 			sleep(500);
 			driveDirect(0, 0);
-			System.out.println(lightBumpReadings[3] + " "  + lightBumpReadings[5] + " Closed Turn");
-			
-		} 
-	
-	else if (lightBumpReadings[3] > 1800) {
-		driveDirect(-200, -200);
-		sleep(500);
-		driveDirect(0, 0);
-		sleep(100);
-		driveDirect(-200, 200);
-		sleep(500);
-		driveDirect(0, 0);
-		System.out.println(lightBumpReadings[3] + " BACK UP");
 		}
-	
-			//STRAIGHT: WORKS
-					else if (lightBumpReadings[5] > 0) {
-			driveDirect(90, 110);
-			sleep(800);
+
+		// RIGHT CLOSED TURN: WORKS
+		else if (lightBumpReadings[3] > 0 && lightBumpReadings[5] > 0) {
+			counter = 0;
+			driveDirect(-200, 225);
+			sleep(750);
 			driveDirect(0, 0);
-				System.out.println(lightBumpReadings[5] + " Straight");
-			}
-			// Drive
-		else {
-			driveDirect(165, 90);
 
 		}
 
+		/*else if (lightBumpReadings[3] > 1800) {
+			counter = 0;
+			driveDirect(-200, -200);
+			sleep(500);
+			driveDirect(0, 0);
+			sleep(100);
+			driveDirect(-200, 200);
+			sleep(500);
+			driveDirect(0, 0);
+		}*/
+
+		// STRAIGHT: WORKS
+		else if (lightBumpReadings[5] > 0) {
+			counter = 0;
+			driveDirect(180, 220);
+			sleep(250);
+			driveDirect(0, 0);
+		}
+
+		// Drive
+
+		else if (counter > 5) {
+			driveDirect(300, 90);
+		}
+
+		else {
+			driveDirect(400, 300);
+			counter++;
+		}
+
+		
 		return true;
 	}
 
@@ -85,6 +106,5 @@ public class MazeHugRight extends IRobotAdapter {
 		stop();
 		closeConnection();
 	}
-
 
 }
