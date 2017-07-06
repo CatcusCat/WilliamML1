@@ -129,9 +129,9 @@ public class Jeopardy implements ActionListener {
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
 		// Remove this temporary message
 		// Use a pop up to ask the user the question
-		String q1 = JOptionPane.showInputDialog("");
+		String q1 = JOptionPane.showInputDialog(question);
 		// If the answer is correct
-		if  (q1.equalsIgnoreCase("")) {
+		if  (q1.equalsIgnoreCase(correctAnswer)) {
 			// Increase the score by the prizeMoney
 			score += prizeMoney;
 			// Call the updateScore() method
