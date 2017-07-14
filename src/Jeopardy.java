@@ -32,7 +32,7 @@ public class Jeopardy implements ActionListener {
 	private JButton thirdButton, fourthButton;
 	
 	private JPanel quizPanel;
-	int score = 0;
+	int prizeMoney = 0;
 	JLabel scoreBox = new JLabel("0");
 	int buttonCount = 0;
 
@@ -79,16 +79,15 @@ public class Jeopardy implements ActionListener {
 		frame.add(makeScorePanel(), BorderLayout.NORTH);
 		frame.setSize(Toolkit.getDefaultToolkit().getScreenSize().height, Toolkit.getDefaultToolkit().getScreenSize().width);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-
-	/*
-	 * 13. Use the method provided to play the Jeopardy theme music 
-	 * 
-	 * 14. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
-	 *
-	 * [optional] Use the showImage or playSound methods when the user answers a question 
-	 */
 	
+
+	// 13. Use the method provided to play the Jeopardy theme music 
+	 playJeopardyTheme();
+	 //* 14. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
+	
+	// * [optional] Use the showImage or playSound methods when the user answers a question 
+	// */
+	}
 	private JButton createButton(String dollarAmount) {
 		// Create a new JButton
 		JButton Button = new JButton(dollarAmount);
@@ -103,7 +102,6 @@ public class Jeopardy implements ActionListener {
 
 	public void actionPerformed(ActionEvent arg0) {
 		// Remove this temporary message:
-		JOptionPane.showMessageDialog(null,"pressed " + ((JButton)arg0.getSource()).getText() + " button");
 
 		// Use the method that plays the jeopardy theme music.
 		playJeopardyTheme();
@@ -135,18 +133,19 @@ public class Jeopardy implements ActionListener {
 			// Increase the score by the prizeMoney
 			score += prizeMoney;
 			// Call the updateScore() method
-			
+			updateScore();
 			// Pop up a message to tell the user they were correct
+			JOptionPane.showMessageDialog(null, "Correct!");
 		}
 		// Otherwise
-		
+		else {
 			// Decrement the score by the prizeMoney
-			
+			score -= prizeMoney;
 			// Pop up a message to tell the user the correct answer
-			
+			JOptionPane.showMessageDialog(null, "The correct answer was " + correctAnswer);
 			// Call the updateScore() method
-			
-		
+			updateScore();
+		}
 	}
 
 

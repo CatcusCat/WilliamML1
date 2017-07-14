@@ -6,11 +6,14 @@
  * 6. Make a Smurfette and print her name, hat color and girl or boy. */
 
 public class Smurf {
-
+	private String hatColor;
 	private String name;
+	private String gender;
 
-	Smurf(String name) {
+	Smurf(String name, String hatColor, String gender) {
 		this.name = name;
+		this.hatColor = hatColor;
+		this.gender = gender;
 	}
 
 	public String getName() {
@@ -24,13 +27,13 @@ public class Smurf {
 	/* Papa Smurf wears a red hat, all the others are white. */
 	public String getHatColor() {
 		// 3. Fill in this method
-		return "";
+		return name + "'s hat color is " + hatColor;
 	}
 
 	/* Smurfette is the only female Smurf. */
 	public String isGirlOrBoy() {
 		// 4. Fill in this method
-		return "";
+		return name + " is a " + gender;
 	}
 
 }
