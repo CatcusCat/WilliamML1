@@ -1,7 +1,10 @@
 /207863__stumber__percussion-hit.wav
 /381982__djfroyd__snare-hit.wav
+<<<<<<< HEAD
 /Backpack.class
 /BookOfIllusions.class
+=======
+>>>>>>> origin/master
 /ButtonListener.class
 /ButtonListenerRunner.class
 /Cat.class
@@ -18,11 +21,17 @@
 /Jeopardy.class
 /MazeHugLeft.class
 /MazeHugRight.class
+<<<<<<< HEAD
 /Pencil.class
 /PhotoQuiz.class
 /Robot.class
 /RobotArmy.class
 /Ruler.class
+=======
+/PhotoQuiz.class
+/Robot.class
+/RobotArmy.class
+>>>>>>> origin/master
 /SeaCreature.class
 /SeaCreatureRunner.class
 /ShapeDrawer.class
@@ -30,14 +39,18 @@
 /Smurf.class
 /SmurfRunner.class
 /SpeedChallenge.class
+<<<<<<< HEAD
 /Supply.class
 /Textbook.class
+=======
+>>>>>>> origin/master
 /downArrow.png
 /drum.png
 /largeDrum.jpg
 /leftArrow.png
 /rightArrow.jpg
 /upArrow.png
+<<<<<<< HEAD
 /LandOfTurtles.class
 /CowTimer.class
 /275154__bird-man__moo.wav
@@ -45,3 +58,5 @@
 /Movies.class
 /NetflixQueue.class
 /Movie.class
+=======
+>>>>>>> origin/master
