@@ -35,6 +35,7 @@ public class Jeopardy implements ActionListener {
 	int prizeMoney = 0;
 	JLabel scoreBox = new JLabel("0");
 	int buttonCount = 0;
+	int score = 0;
 
 	public static void main(String[] args) {
 		new Jeopardy().start();
