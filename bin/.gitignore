@@ -13,6 +13,7 @@
 /CowTimer.class
 /DrumKit.class
 /DuelingButtons.class
+/Family.class
 /HarryPotter.class
 /HarryPotterRunner.class
 /Human.class
@@ -25,6 +26,7 @@
 /NetflixQueue.class
 /NetflixRunner.class
 /Pencil.class
+/Person.class
 /PhotoQuiz.class
 /Robot.class
 /RobotArmy.class
@@ -44,5 +46,4 @@
 /leftArrow.png
 /rightArrow.jpg
 /upArrow.png
-/Family.class
-/Person.class
+/ChuckleClicker.class
