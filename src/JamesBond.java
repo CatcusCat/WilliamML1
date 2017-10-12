@@ -5,25 +5,14 @@ public class JamesBond {
 		
 		
 	}
+
 	
-	boolean TryCode(int TryCombo) {
+	void guessCode(Vault v) {
 		for (int i = 0; i < 1000000; i++) {
-			TryCombo += 1;
-
-			if (TryCombo == code) {
-
-				return true;
-
-			}
-
-			else {
-				return false;
-
-			}
-
+			v.TryCode(i);
+			
 		}
-		return false;
-
+		
 	}
 
 	
