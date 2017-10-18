@@ -16,8 +16,9 @@ public class TypingTutor implements KeyListener {
 		long gameInSeconds = (gameDuration / 1000) % 60;
 		double charactersPerSecond = ((double) numberOfCorrectCharactersTyped / (double) gameInSeconds);
 		int charactersPerMinute = (int) (charactersPerSecond * 60);
-		JOptionPane.showMessageDialog(null, "Your typing speed is " + charactersPerMinute + " characters per minute.");
+		System.out.println("Your typing speed is " + charactersPerMinute + " characters per minute.");
 	}
+	
 	private static Date timeAtStart = new Date();
 
 	
@@ -25,10 +26,14 @@ public class TypingTutor implements KeyListener {
 	JFrame f = new JFrame();
 	JLabel l = new JLabel();
 	
+	int counter = 0;
+	int score = 0;
+	
 	char currentLetter = generateRandomLetter();
 
 	
 	public static void main(String[] args) {
+		//oof oof oof
 		new TypingTutor();
 	}
 	
@@ -39,7 +44,7 @@ public class TypingTutor implements KeyListener {
 		f.addKeyListener(this);
 		f.add(l);
 		f.setDefaultCloseOperation(3);
-		f.pack();
+		f.setSize(8000,6000);
 		f.setVisible(true);
 	}
 	
@@ -62,6 +67,8 @@ public class TypingTutor implements KeyListener {
 			l.setOpaque(true);
 			currentLetter = generateRandomLetter();
 			l.setText(String.valueOf(currentLetter));
+			counter += 1;
+			score += 1;
 		}
 		
 		else if (currentLetter != e.getKeyChar()) {
@@ -69,9 +76,17 @@ public class TypingTutor implements KeyListener {
 			System.out.println("You typed: " + e.getKeyChar());
 			l.setBackground(Color.RED);
 			l.setOpaque(true);
+			currentLetter = generateRandomLetter();
+			l.setText(String.valueOf(currentLetter));
+			counter += 1;
 			
 		}
 		
+		if (counter == 25) {
+			System.out.println("You scored: " + score + " out of 25");
+			showTypingSpeed(score);
+			System.exit(0);
+		}
 
 	}
 

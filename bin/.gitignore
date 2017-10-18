@@ -44,6 +44,7 @@
 /SpeedChallenge.class
 /Supply.class
 /Textbook.class
+/TypingTutor.class
 /Vault.class
 /VaultRunner.class
 /commons-logging-1.1.3.jar
@@ -54,4 +55,4 @@
 /rightArrow.jpg
 /twitter4j-core-3.0.5.jar
 /upArrow.png
-/TypingTutor.class
+/ClickAButton.class
