@@ -13,6 +13,7 @@
 /ChuckleClicker.class
 /Class.class
 /ClickAButton.class
+/ColorPalette.class
 /CowTimer.class
 /DrumKit.class
 /DuelingButtons.class
@@ -40,6 +41,8 @@
 /SeaCreatureRunner.class
 /ShapeDrawer.class
 /SimonSays.class
+/SlotMachine$TimerUpdate.class
+/SlotMachine.class
 /Smurf.class
 /SmurfRunner.class
 /SpeedChallenge.class
@@ -48,22 +51,21 @@
 /TypingTutor.class
 /Vault.class
 /VaultRunner.class
+/banana.jpg
 /commons-logging-1.1.3.jar
 /downArrow.png
 /drum.png
+/gummicnady.jpg
 /largeDrum.jpg
 /leftArrow.png
-/rightArrow.jpg
-/twitter4j-core-3.0.5.jar
-/upArrow.png
 /mole(for-eating).jpg
 /mole.jpg
-/Screen Shot 2017-10-25 at 16.07.40.png
 /moleshot.png
-/SlotMachine.class
 /orange.jpeg
-/banana.jpg
+/rightArrow.jpg
 /scarycherry.jpg
-/gummicnady.jpg
-/SlotMachine$TimerUpdate.class
-/ColorPalette.class
+/twitter4j-core-3.0.5.jar
+/upArrow.png
+/PicassoRunner.class
+/Picasso.class
+/SimpleCalculator.class
