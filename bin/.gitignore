@@ -34,6 +34,8 @@
 /Pencil.class
 /Person.class
 /PhotoQuiz.class
+/Picasso.class
+/PicassoRunner.class
 /Robot.class
 /RobotArmy.class
 /Ruler.class
@@ -41,6 +43,7 @@
 /SeaCreatureRunner.class
 /ShapeDrawer.class
 /SimonSays.class
+/SimpleCalculator.class
 /SlotMachine$TimerUpdate.class
 /SlotMachine.class
 /Smurf.class
@@ -66,6 +69,7 @@
 /scarycherry.jpg
 /twitter4j-core-3.0.5.jar
 /upArrow.png
-/PicassoRunner.class
-/Picasso.class
-/SimpleCalculator.class
+/SCalcAddition.class
+/SCalcSubtraction.class
+/SCalcMultiplication.class
+/SCalcDivision.class
