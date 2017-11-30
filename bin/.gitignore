@@ -39,6 +39,10 @@
 /Robot.class
 /RobotArmy.class
 /Ruler.class
+/SCalcAddition.class
+/SCalcDivision.class
+/SCalcMultiplication.class
+/SCalcSubtraction.class
 /SeaCreature.class
 /SeaCreatureRunner.class
 /ShapeDrawer.class
@@ -69,7 +73,4 @@
 /scarycherry.jpg
 /twitter4j-core-3.0.5.jar
 /upArrow.png
-/SCalcAddition.class
-/SCalcSubtraction.class
-/SCalcMultiplication.class
-/SCalcDivision.class
+/Convert.class
