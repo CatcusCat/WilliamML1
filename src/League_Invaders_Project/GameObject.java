@@ -1,3 +1,4 @@
+package League_Invaders_Project;
 import java.awt.Graphics;
 
 public class GameObject {
@@ -6,9 +7,10 @@ public class GameObject {
 	int y;
 	int width;
 	int height;
+	boolean isAlive = true;
 
 	public void draw(Graphics g) {
-		g.fillRect(x, y, 100, 100);
+		
 	}
 
 	GameObject(int x, int y, int width, int height) {
@@ -19,8 +21,7 @@ public class GameObject {
 	}
 
 	void update() {
-		x += 5;
-		y += 5;
+		
 	}
 
 }
