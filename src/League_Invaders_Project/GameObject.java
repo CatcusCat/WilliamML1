@@ -1,4 +1,5 @@
 package League_Invaders_Project;
+
 import java.awt.Graphics;
 
 public class GameObject {
@@ -10,7 +11,7 @@ public class GameObject {
 	boolean isAlive = true;
 
 	public void draw(Graphics g) {
-		
+
 	}
 
 	GameObject(int x, int y, int width, int height) {
@@ -21,7 +22,7 @@ public class GameObject {
 	}
 
 	void update() {
-		
+
 	}
 
 }
