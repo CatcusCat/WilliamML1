@@ -32,7 +32,7 @@ public class CowTimer {
 		 */
       for (int i = 0; i < minutes; minutes--) {
     	   System.out.println(minutes);
-		Thread.sleep(60000);
+		Thread.sleep(1080000);
 	}
 		/*
 		 * 3. When the timer is finished, use the playSound method to play a moo
