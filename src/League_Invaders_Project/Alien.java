@@ -13,6 +13,7 @@ public class Alien extends GameObject {
 	public boolean isAlive;
 	
 	void update() {
+		
 		super.update();
 		
 		y += 5;

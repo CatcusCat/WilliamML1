@@ -9,7 +9,7 @@ public class ObjectManager {
 	ArrayList<Projectile> list = new ArrayList();
 	ArrayList<Alien> lista = new ArrayList();
 	long enemyTimer;
-	long enemySpawnTime;
+	long enemySpawnTime = 5000;
 
 	public ObjectManager(Rocketship rocky) {
 		this.rocky = rocky;
@@ -47,18 +47,24 @@ public class ObjectManager {
 
 	}
 
+	public void addAlien(Alien a) {
+		// TODO Auto-generated method stub
+		lista.add(a);
+	}
+
 	public void purgeObjects() {
 		for (int i = 0; i > list.size(); i++) {
-			if (!list.get(i).isAlive) {
+			if (list.get(i).isAlive == false) {
 				list.remove(i);
 			}
 		}
 		for (int i = 0; i > lista.size(); i++) {
-			if (!list.get(i).isAlive) {
-				list.remove(i);
+			if (lista.get(i).isAlive ==  false) {
+				lista.remove(i);
 			}
 
 		}
+
 	}
 
 	public void manageEnemies() {
@@ -70,25 +76,23 @@ public class ObjectManager {
 		}
 	}
 
-	public void addAlien(Alien a) {
-		// TODO Auto-generated method stub
-		lista.add(a);
-	}
-
 	public void checkCollision() {
 		for (Alien a : lista) {
+
+			for (Projectile p : list) {
+				if (p.collisionBox.intersects(a.collisionBox)) {
+					p.isAlive = false;
+					a.isAlive = false;
+				}
+
+			}
 			if (rocky.collisionBox.intersects(a.collisionBox)) {
 				rocky.isAlive = false;
 
 			}
 
-			for (Projectile p : list) {
-				if (a.collisionBox.intersects(p.collisionBox)) {
-					a.isAlive = false;
-					p.isAlive = false;
-				}
-			}
 		}
+
 	}
 
 }
