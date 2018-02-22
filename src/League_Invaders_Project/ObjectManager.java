@@ -9,7 +9,8 @@ public class ObjectManager {
 	ArrayList<Projectile> list = new ArrayList();
 	ArrayList<Alien> lista = new ArrayList();
 	long enemyTimer;
-	long enemySpawnTime = 5000;
+	long enemySpawnTime = 500;
+	int score = 0;
 
 	public ObjectManager(Rocketship rocky) {
 		this.rocky = rocky;
@@ -18,6 +19,7 @@ public class ObjectManager {
 
 	void update() {
 		rocky.update();
+		getScore();
 
 		for (Projectile p : list) {
 			p.update();
@@ -53,18 +55,24 @@ public class ObjectManager {
 	}
 
 	public void purgeObjects() {
-		for (int i = 0; i > list.size(); i++) {
+
+		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).isAlive == false) {
 				list.remove(i);
 			}
 		}
-		for (int i = 0; i > lista.size(); i++) {
-			if (lista.get(i).isAlive ==  false) {
+		for (int i = 0; i < lista.size(); i++) {
+			if (lista.get(i).isAlive == false) {
 				lista.remove(i);
+				score++;
 			}
 
 		}
 
+	}
+
+	void getScore() {
+		System.out.println(score);
 	}
 
 	public void manageEnemies() {

@@ -39,6 +39,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		objMana.manageEnemies();
 		objMana.checkCollision();
 		objMana.update();
+		
+		if (objMana.rocky.isAlive == false) {
+			currentState = END_STATE;
+		}
 	}
 
 	public void updateEndState() {
@@ -104,15 +108,28 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 	}
+	
+	
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-			currentState++;
-			if (currentState > END_STATE) {
-				currentState = MENU_STATE;
+			
+			if (currentState == MENU_STATE) {
+				currentState++;
 			}
+			
+			else if (currentState == GAME_STATE) {
+				currentState++;
+			}
+			
+			else if (currentState == END_STATE) {
+				rocket = new Rocketship(250, 750, 50, 50);
+				objMana = new ObjectManager(rocket);
+				currentState -= 2;
+			}
+			
 		}
 		
 		else if (e.getKeyCode() == KeyEvent.VK_SPACE) {

@@ -10,7 +10,7 @@ public class Alien extends GameObject {
 		// TODO Auto-generated constructor stub
 	}
 
-	public boolean isAlive;
+	public boolean isAlive = true;
 	
 	void update() {
 		
@@ -18,7 +18,7 @@ public class Alien extends GameObject {
 		
 		y += 5;
 		
-		if (y > 0) {
+		if (y > 800) {
 			isAlive = false;
 		}
 	}
