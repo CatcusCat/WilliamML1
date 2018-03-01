@@ -4,6 +4,8 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 public class ObjectManager {
 	Rocketship rocky;
 	ArrayList<Projectile> list = new ArrayList();
@@ -34,7 +36,8 @@ public class ObjectManager {
 
 	void draw(Graphics g) {
 		rocky.draw(g);
-
+		
+		
 		for (Projectile p : list) {
 			p.draw(g);
 		}
@@ -96,6 +99,7 @@ public class ObjectManager {
 			}
 			if (rocky.collisionBox.intersects(a.collisionBox)) {
 				rocky.isAlive = false;
+				JOptionPane.showMessageDialog(null, "You got " + score + " points.");
 
 			}
 
