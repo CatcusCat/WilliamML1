@@ -8,21 +8,20 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class ColorTeacher implements ActionListener {
-	
+
 	JFrame colorTeacherFrame = new JFrame();
 	JPanel colorTeacherPanel = new JPanel();
 	JButton yellow = new JButton();
 	JButton red = new JButton();
 	JButton blue = new JButton();
 	JButton green = new JButton();
-	
+
 	public static void main(String[] args) {
 		new ColorTeacher();
-		
+
 	}
-	
+
 	public ColorTeacher() {
-		speak("yellow");
 		colorTeacherFrame.add(colorTeacherPanel);
 		colorTeacherPanel.add(yellow);
 		colorTeacherPanel.add(red);
@@ -44,12 +43,12 @@ public class ColorTeacher implements ActionListener {
 		colorTeacherFrame.pack();
 		colorTeacherFrame.setVisible(true);
 	}
-	
+
 	void speak(String words) {
 		try {
-				Runtime.getRuntime().exec("say " + words);
+			Runtime.getRuntime().exec("say " + words);
 		}
-		
+
 		catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -61,18 +60,18 @@ public class ColorTeacher implements ActionListener {
 		if (e.getSource() == yellow) {
 			speak("Yellow");
 		}
-		
+
 		else if (e.getSource() == red) {
 			speak("Red");
 		}
-		
+
 		else if (e.getSource() == blue) {
 			speak("Blue");
 		}
-		
+
 		else if (e.getSource() == green) {
 			speak("Green");
 		}
 	}
-	
+
 }
